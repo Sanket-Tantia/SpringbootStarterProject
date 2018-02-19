@@ -23,7 +23,7 @@ public class Topic {
 
     @RequestMapping(method = RequestMethod.POST, value = "/topic")
     public void addTopic(@RequestBody TopicData newTopic){
-        topicService.addTopic(newTopic  );
+        topicService.addTopic(newTopic);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/topic/{id}")
@@ -31,4 +31,11 @@ public class Topic {
         String s = topicService.updateTopic(id,updatedTopic);
         return s;
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/topic/{id}")
+    public void deleteTopic(@PathVariable String id){
+        topicService.deleteTopic(id);
+
+    }
+
 }

@@ -23,10 +23,11 @@ public class TopicService {
     }
 
     public void addTopic(TopicData newTopic) {
-        alltopics.add(newTopic);    
+        alltopics.add(newTopic);
     }
 
     public String updateTopic(String id, TopicData updatedTopic) {
+        //alltopics.stream().filter(t ->t.getId().equals(id)).findFirst().set
         for(int i=0;i<alltopics.size();i++){
             TopicData t = alltopics.get(i);
             if(t.getId()==id){
@@ -35,5 +36,9 @@ public class TopicService {
             }
         }
         return "Sanket";
+    }
+
+    public void deleteTopic(String id) {
+        alltopics.removeIf(t -> t.getId().equals(id));
     }
 }
