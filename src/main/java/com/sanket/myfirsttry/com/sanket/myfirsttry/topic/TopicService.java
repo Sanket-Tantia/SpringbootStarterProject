@@ -28,6 +28,7 @@ public class TopicService {
 
     public String updateTopic(String id, TopicData updatedTopic) {
         //alltopics.stream().filter(t ->t.getId().equals(id)).findFirst().set
+
         for(int i=0;i<alltopics.size();i++){
             TopicData t = alltopics.get(i);
             if(t.getId()==id){
@@ -35,7 +36,7 @@ public class TopicService {
                 return "true";
             }
         }
-        return "Sanket";
+        return id;
     }
 
     public void deleteTopic(String id) {

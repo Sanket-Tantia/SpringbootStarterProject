@@ -1,7 +1,12 @@
 package com.sanket.myfirsttry.com.sanket.myfirsttry.topic;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class TopicData {
 
+    @Id
     private String id;
     private String name;
     private String desc;
