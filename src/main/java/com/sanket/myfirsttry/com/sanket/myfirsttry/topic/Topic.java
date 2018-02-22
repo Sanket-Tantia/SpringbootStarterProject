@@ -27,9 +27,9 @@ public class Topic {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/topic/{id}")
-    public String updateTopic(@RequestBody TopicData updatedTopic, @PathVariable("id") String id){
-        String s = topicService.updateTopic(id,updatedTopic);
-        return s;
+    public void updateTopic(@RequestBody TopicData updatedTopic, @PathVariable("id") String id){
+        topicService.updateTopic(id,updatedTopic);
+
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/topic/{id}")
